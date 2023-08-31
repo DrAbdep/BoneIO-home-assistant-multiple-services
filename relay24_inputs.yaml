@@ -1,0 +1,1821 @@
+#i2c addresses
+# address: 0x26 input pcf io
+# address: 0x27 input pcf io
+# address: 0x3C input oled
+# address: 0x40 input ina219 power
+# address: 0x68 input rtc ds1307
+
+binary_sensor:
+
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 13
+      mode: 
+        input: true
+      inverted: true
+    name: "IN01"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN01
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN01
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN01
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 12
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN02"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN02
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN02
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN02
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 11
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN03"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN03
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN03
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN03
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 10
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN04"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN04
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN04
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN04
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 9
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN05"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN05
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN05
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN05
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 8
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN06"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN06
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN06
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN06
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 7
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN07"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN07
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN07
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN07
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 6
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN08"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN08
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN08
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN08
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 8
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN09"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN09
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN09
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN09
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      number: 34
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN10"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN10
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN10
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN10
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 10
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN12"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN12
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN12
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN12
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 9
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN11"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN12
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN12
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN12
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 7
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN13"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN13
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN13
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN13
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 6
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN14"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN14
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN14
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN14
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 5
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN15"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN15
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN15
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN15
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 4
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN16"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN16
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN16
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN16
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 3
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN17"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN17
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN17
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN17
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 2
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN18"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN18
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN18
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN18
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 1
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN19"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN19
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN19
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN19
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 0
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN20"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN20
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN20
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN20
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 11
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN21"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN21
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN21
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN21
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 12
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN16"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN22
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN22
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN22
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 13
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN23"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN23
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN23
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN23
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 14
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN24"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN24
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN24
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN24
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_1
+      number: 15
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN25"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN25
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN25
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN25
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 15
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN26"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN26
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN26
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN26
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 14
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN27"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN27
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN27
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN27
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 13
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN28"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN28
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN28
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN28
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 14
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN29"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN29
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN29
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN29
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 15
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN30"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN30
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN30
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN30
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 5
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN31"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN31
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN31
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN31
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 4
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN32"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN32
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN32
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN32
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 3
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN33"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN33
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN33
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN33
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 2
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN34"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN34
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN34
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN34
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 1
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN35"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN35
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN35
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN35
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_2
+      number: 0
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN36"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN36
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN36
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN36
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 7
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN37"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN37
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN37
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN37
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 6
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN38"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN38
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN38
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN38
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 5
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN39"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN39
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN39
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN39
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 4
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN40"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN40
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN40
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN40
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 3
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN41"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN41
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN41
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN41
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 2
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN42"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN42
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN42
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN42
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 1
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN43"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN43
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN43
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN43
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 0
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN44"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN44
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN44
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN44
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 8
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN45"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN45
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN45
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN45
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 9
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN46"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN46
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN46
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN46
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 10
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN47"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN47
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN47
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN47
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 11
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN48"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN48
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN48
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN48
+          data:
+            title: single_click
+  - platform: gpio
+    pin:
+      pcf8574: pcf_input_3
+      number: 12
+      mode: 
+        input: true
+      inverted: true
+    name: "Input.IN49"
+    on_multi_click:
+    - timing:
+      - ON for at most 1s
+      - OFF for at most 1s
+      - ON for at most 1s
+      - OFF for at least 0.2s
+      then:
+      - logger.log: "Double Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN49
+          data:
+            title: dbl_click
+    - timing:
+      - ON for 1s to 5s
+      then:
+      - logger.log: "Single Long Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN49
+          data:
+            title: long_click
+    - timing:
+      - ON for at most 1s
+      - OFF for at least 0.5s
+      then:
+      - logger.log: "Single Short Clicked"
+      - homeassistant.event:
+          event: esphome.Input.IN49
+          data:
+            title: single_click
